@@ -6,13 +6,12 @@ native File.read, File.write etc... for Opal
 
 Opal's File class does not have methods for file IO but this module provides them.
 
-### Limitation
+This provides...
 
-This provides only methods listed below.
-
-- read
-- write
-- unlink
+- `File` (partial; no #open and #new)
+- `File::Stat` (partial)
+- `FileTest` (partial)
+- `Errno::EXXX`
 
 Pull requests are welcome!
 
