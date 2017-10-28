@@ -157,11 +157,15 @@ if RUBY_ENGINE == "opal"
       # IO
 
       def read(filename, options)
-        fs.JS.readFileSync(filename, { encoding: "utf8" }.to_n)
+        handle_errno do
+          fs.JS.readFileSync(filename, { encoding: "utf8" }.to_n)
+        end
       end
 
       def write(filename, content)
-        fs.JS.writeFileSync(filename, content.to_s)
+        handle_errno do
+          fs.JS.writeFileSync(filename, content.to_s)
+        end
       end
 
       private
